@@ -1,0 +1,20 @@
+name: ci-verificar-codigo
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  lint:
+    runs-on: ubuntu-last                  #revisar
+    steps:
+      - name: cualquier-nombre-checkout
+        uses: actions/checkout@4          #revisar
+        
+      - name: validar-html
+        run:
+          echo: validando html prueba     #revisar
+          
+      
