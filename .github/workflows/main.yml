@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos
+        run: |
+          if [ -f home.html ] && [ -f styles.css ]; then
+            echo "Archivos encontrados ✔"
+          else
+            echo "Faltan archivos ❌"
+            exit 1
+          fi
+
+  cd:
+    runs-on: ubuntu-latest
+    needs: ci   # IMPORTANTE (CD depende de CI)
+
+    steps:
+      - name: Simular despliegue
+        run: echo "Artefactos listos para el despliegue en Staging 🚀"
