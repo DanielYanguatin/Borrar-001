@@ -28,9 +28,8 @@ jobs:
     needs: ci
 
     steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
       - name: Simular despliegue
         run: echo "Artefactos listos para el despliegue en Staging 🚀"
-
-      - name: Mostrar URL del sitio
-        run: |
-          echo "Sitio disponible en: https://danielyanguatin.github.io/Borrar-001/"
