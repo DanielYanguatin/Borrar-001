@@ -16,7 +16,7 @@ jobs:
 
       - name: Verificar archivos
         run: |
-          if [ -f docs/index.html ] && [ -f docs/styles.css ]; then
+          if [ -f index.html ] && [ -f styles.css ]; then
             echo "Archivos encontrados ✔"
           else
             echo "Faltan archivos ❌"
